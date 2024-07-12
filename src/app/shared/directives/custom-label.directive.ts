@@ -10,7 +10,6 @@ export class CustomLabelDirective implements OnInit {
   private _errors?: ValidationErrors | null;
 
   @Input() set color(value: string){
-    console.log({color:value});
     this._color = value;
     this.setStyle();
   }
@@ -22,12 +21,10 @@ export class CustomLabelDirective implements OnInit {
 
   constructor(private el: ElementRef<HTMLElement>) {
     //console.log('Constructor de la directiva')
-    console.log(el);
     this.htmlElement = el;
   }
 
   ngOnInit(): void {
-    console.log('Directiva - NgOnInit')
     this.setStyle();
   }
 
